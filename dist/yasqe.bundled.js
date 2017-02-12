@@ -4816,8 +4816,10 @@ Trie.prototype = {
             ret.push(str);
         }
         for(k in T.children) {
-            child = T.children[k];
-            ret = ret.concat(child.getAllWords(str + k));
+            if(T.children.hasOwnProperty(k)){
+                child = T.children[k];
+                ret = ret.concat(child.getAllWords(str + k));
+            }
         }
         return ret;
     },
@@ -25281,12 +25283,13 @@ module.exports={
         "spec": ">=1.6.0 <2.0.0",
         "type": "range"
       },
-      "/home/lrd900/yasgui/yasqe"
+      "/home/thymeflow/repos/YASGUI.YASQE"
     ]
   ],
   "_from": "yasgui-utils@>=1.6.0 <2.0.0",
   "_id": "yasgui-utils@1.6.0",
   "_inCache": true,
+  "_installable": true,
   "_location": "/yasgui-utils",
   "_npmUser": {
     "name": "laurens.rietveld",
@@ -25310,7 +25313,7 @@ module.exports={
   "_shasum": "bcb9091109c233e3e82737c94c202e6512389c47",
   "_shrinkwrap": null,
   "_spec": "yasgui-utils@^1.6.0",
-  "_where": "/home/lrd900/yasgui/yasqe",
+  "_where": "/home/thymeflow/repos/YASGUI.YASQE",
   "author": {
     "name": "Laurens Rietveld"
   },
